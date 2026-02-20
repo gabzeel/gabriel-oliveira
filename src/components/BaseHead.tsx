@@ -25,20 +25,6 @@ export function BaseHead({
       <link rel="icon" href="/favicon.ico" />
       <link rel="sitemap" href="/sitemap-index.xml" />
       <meta name="generator" content={generator} />
-      <link
-        rel="preload"
-        href="/fonts/atkinson-regular.woff"
-        as="font"
-        type="font/woff"
-        crossOrigin=""
-      />
-      <link
-        rel="preload"
-        href="/fonts/atkinson-bold.woff"
-        as="font"
-        type="font/woff"
-        crossOrigin=""
-      />
       <title>{title}</title>
       <meta name="title" content={title} />
       <meta name="description" content={description} />

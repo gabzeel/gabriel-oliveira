@@ -13,6 +13,8 @@ import {
   Dialog,
   DialogClose,
   DialogContent,
+  DialogDescription,
+  DialogTitle,
   DialogTrigger,
 } from "@/components/ui/dialog";
 import { Download, Menu } from "lucide-react";
@@ -159,7 +161,12 @@ export default function Header({ currentPath }: Props): ReactElement {
               className="top-0 right-0 left-auto h-full w-[min(22rem,85vw)] translate-x-0 translate-y-0 rounded-l-3xl rounded-r-none p-6 sm:max-w-none max-w-none"
               showCloseButton
             >
-              <div className="flex flex-col gap-6">
+              <DialogTitle className="sr-only">Site menu</DialogTitle>
+              <DialogDescription className="sr-only">
+                Navigation links, curriculum downloads, language status, and
+                social links.
+              </DialogDescription>
+              <div className="flex h-full flex-col gap-6">
                 <div className="flex items-center justify-between">
                   <h3 className="text-sm font-semibold uppercase tracking-widest text-slate-500">
                     Menu
@@ -239,47 +246,62 @@ export default function Header({ currentPath }: Props): ReactElement {
                     </DialogClose>
                   </div>
                 </div>
-                <div className="flex flex-col gap-2">
-                  <p className="text-xs font-semibold uppercase tracking-widest text-slate-500">
-                    Language
-                  </p>
-                  <div className="flex items-center gap-3 text-sm text-slate-600">
-                    <img
-                      src={brazilFlag.src}
-                      alt="Brazil"
-                      className="size-5 rounded-full object-cover"
-                    />
-                    Português
-                  </div>
-                  <div className="flex items-center gap-3 text-sm text-slate-400">
-                    <img
-                      src={usaFlag.src}
-                      alt="United States"
-                      className="size-5 rounded-full object-cover"
-                    />
-                    English (WIP)
-                  </div>
-                </div>
-                <div className="flex flex-col gap-2">
-                  <p className="text-xs font-semibold uppercase tracking-widest text-slate-500">
-                    Social
-                  </p>
-                  <div className="flex flex-wrap gap-2">
-                    {PROFILE.socials.map((social) => (
-                      <DialogClose key={social.label} asChild>
-                        <Button asChild variant="ghost" size="icon">
-                          <a
-                            href={social.href}
-                            target="_blank"
-                            rel="noreferrer"
-                            aria-label={social.label}
-                          >
-                            <span className="sr-only">{social.label}</span>
-                            <SocialIcon type={social.icon} />
-                          </a>
-                        </Button>
+                <div className="mt-auto flex flex-col gap-6">
+                  <div className="flex flex-col gap-2">
+                    <p className="text-xs font-semibold uppercase tracking-widest text-slate-500">
+                      Language
+                    </p>
+                    <div className="flex flex-col gap-1">
+                      <DialogClose asChild>
+                        <a
+                          href="/"
+                          className="inline-flex items-center gap-2 rounded-md px-3 py-2 text-sm font-medium text-slate-600 transition-colors hover:bg-slate-100 hover:text-slate-900"
+                        >
+                          <img
+                            src={brazilFlag.src}
+                            alt="Brazil"
+                            className="size-4 rounded-full object-cover"
+                          />
+                          Português
+                        </a>
                       </DialogClose>
-                    ))}
+                      <DialogClose asChild>
+                        <a
+                          href="/"
+                          className="inline-flex items-center gap-2 rounded-md px-3 py-2 text-sm font-medium text-slate-400"
+                          aria-disabled="true"
+                        >
+                          <img
+                            src={usaFlag.src}
+                            alt="United States"
+                            className="size-4 rounded-full object-cover"
+                          />
+                          English (WIP)
+                        </a>
+                      </DialogClose>
+                    </div>
+                  </div>
+                  <div className="flex flex-col gap-2">
+                    <p className="text-xs text-center font-semibold uppercase tracking-widest text-slate-500">
+                      Social
+                    </p>
+                    <div className="flex flex-wrap gap-2 justify-center">
+                      {PROFILE.socials.map((social) => (
+                        <DialogClose key={social.label} asChild>
+                          <Button asChild variant="ghost" size="icon">
+                            <a
+                              href={social.href}
+                              target="_blank"
+                              rel="noreferrer"
+                              aria-label={social.label}
+                            >
+                              <span className="sr-only">{social.label}</span>
+                              <SocialIcon type={social.icon} />
+                            </a>
+                          </Button>
+                        </DialogClose>
+                      ))}
+                    </div>
                   </div>
                 </div>
               </div>

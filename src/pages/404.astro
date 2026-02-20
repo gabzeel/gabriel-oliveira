@@ -1,0 +1,48 @@
+---
+import { ArrowLeft } from "lucide-react";
+import BaseLayout from "../components/layouts/BaseLayout.astro";
+import { Button } from "@/components/ui/button";
+
+const title = "Página não encontrada";
+const description = "A página que você procurou não existe.";
+---
+
+<BaseLayout title={title} description={description}>
+  <main class="mx-auto w-full max-w-4xl px-4 py-10">
+    <div class="mb-8">
+      <a
+        href="/"
+        class="inline-flex items-center gap-1.5 text-sm text-muted-foreground transition-colors hover:text-foreground"
+      >
+        <ArrowLeft className="size-3.5" />
+        Voltar
+      </a>
+    </div>
+
+    <header class="mb-12">
+      <h1
+        class="text-3xl font-bold tracking-tight text-foreground text-balance"
+      >
+        Página não encontrada
+      </h1>
+      <p
+        class="mt-2 text-base leading-relaxed text-muted-foreground text-pretty"
+      >
+        A página que procura não existe mas não se preocupe, aqui vão algumas
+        opções:
+      </p>
+    </header>
+
+    <div>
+      <Button variant="outline" className="rounded-md cursor-pointer">
+        <a href="/login">Minhas experiências profissionais</a>
+      </Button>
+      <Button variant="outline" className="rounded-md cursor-pointer">
+        <a href="/login">Meus projetos</a>
+      </Button>
+      <Button variant="outline" className="rounded-md cursor-pointer">
+        <a href="/login">Minhas ideias e pensamentos</a>
+      </Button>
+    </div>
+  </main>
+</BaseLayout>

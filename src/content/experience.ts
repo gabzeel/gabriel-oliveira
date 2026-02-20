@@ -111,12 +111,12 @@ export const EXPERIENCE: TimelineEntry[] = [
       },
       {
         icon: PinIcon,
-        text: "Adicionei suporte a times para compartilhamento de subscriptions entre usuários que eram gerenciadas via Sripe",
+        text: "Adicionei o suporte a times para compartilhamento de subscriptions, entre usuários, que eram gerenciadas via Stripe",
       },
     ],
     images: [],
     techStack: [
-      { label: "Vue", logo: "vuedotjs", color: "4FC08D" },
+      { label: "Vue.js", logo: "vuedotjs", color: "4FC08D" },
       { label: "React", logo: "react", color: "61DAFB", logoColor: "000000" },
       { label: "Express", logo: "express", color: "000000" },
       { label: "NestJS", logo: "nestjs", color: "E0234E" },

@@ -13,7 +13,7 @@ import {
 import { ArrowLeft } from "lucide-react";
 
 const title = "Blog";
-const description = "Ideias e pensamentos do Gabriel Oliveira Camilo";
+const description = "Ideias e pensamentos do Gabriel Oliveira";
 
 const posts = (await getCollection("blog")).sort(
   (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),

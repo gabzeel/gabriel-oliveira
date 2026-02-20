@@ -1,0 +1,50 @@
+---
+import BaseLayout from "../components/layouts/BaseLayout.astro";
+import { ArrowLeft } from "lucide-react";
+import { ProjectCard } from "@/components/project-card";
+import { PROJECTS } from "@/content/projects";
+
+const title = "Curriculum";
+const description = "Welcome to my blog";
+---
+
+<BaseLayout title={title} description={description}>
+  <main class="mx-auto max-w-5xl px-4 py-16 md:px-6">
+    <div class="mb-8">
+      <a
+        href="/"
+        class="inline-flex items-center gap-1.5 text-sm text-muted-foreground transition-colors hover:text-foreground"
+      >
+        <ArrowLeft className="size-3.5" />
+        Voltar
+      </a>
+    </div>
+
+    <header class="mb-12">
+      <h1
+        class="text-3xl font-bold tracking-tight text-foreground text-balance"
+      >
+        Meus Projetos
+      </h1>
+      <p
+        class="mt-2 text-base leading-relaxed text-muted-foreground text-pretty"
+      >
+        Coleção de projetos pessoais que tenho o orgulho de poder chamar de meu.
+      </p>
+    </header>
+
+    {
+      PROJECTS.length == 0 ? (
+        <div class="px-6 py-12 text-center text-sm text-slate-500 mt-36">
+          Nenhum projeto para mostrar por enquanto.<br/>Volte em breve.
+        </div>
+      ) : (
+        <div class="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
+          {PROJECTS.map((project) => (
+            <ProjectCard project={project} />
+          ))}
+        </div>
+      )
+    }
+  </main>
+</BaseLayout>

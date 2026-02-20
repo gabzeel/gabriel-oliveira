@@ -1,6 +1,8 @@
 ---
 import { type CollectionEntry, getCollection, render } from 'astro:content';
-import BlogPost from '../../layouts/BlogPost.astro';
+import BaseLayout from '../../components/layouts/BaseLayout.astro';
+import BlogPost from '../../components/BlogPost';
+import FallbackImage from '../../assets/blog-placeholder-1.jpg';
 
 export async function getStaticPaths() {
 	const posts = await getCollection('blog');
@@ -13,8 +15,22 @@ type Props = CollectionEntry<'blog'>;
 
 const post = Astro.props;
 const { Content } = await render(post);
+const imageForMeta = post.data.heroImage ?? FallbackImage;
+const imageUrl = new URL(imageForMeta.src, Astro.url);
 ---
 
-<BlogPost {...post.data}>
-	<Content />
-</BlogPost>
+<BaseLayout
+	title={post.data.title}
+	description={post.data.description}
+	imageUrl={imageUrl.toString()}
+>
+	<BlogPost
+		title={post.data.title}
+		description={post.data.description}
+		pubDate={post.data.pubDate}
+		updatedDate={post.data.updatedDate}
+		heroImageUrl={post.data.heroImage?.src}
+	>
+		<Content />
+	</BlogPost>
+</BaseLayout>

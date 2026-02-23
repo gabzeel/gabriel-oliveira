@@ -83,7 +83,7 @@ export const EXPERIENCE: TimelineEntry[] = [
     items: [
       {
         icon: PinIcon,
-        text: "Desenvolvi completamente um novo editor de vídeo em browser utilizando React, Remotion (video as code), Konva.js (HTML Canvas API), NestJS e AWS Lambdas para substituir o editor anterior que possuía limitações",
+        text: "Planejei e desenvolvi um novo editor de vídeo em browser utilizando React, Remotion (video as code), Konva.js (HTML Canvas API), NestJS e AWS Lambdas para substituir o editor anterior que possuía limitações",
       },
       {
         icon: PinIcon,
@@ -158,10 +158,6 @@ export const EXPERIENCE: TimelineEntry[] = [
     items: [
       {
         icon: PinIcon,
-        text: "",
-      },
-      {
-        icon: PinIcon,
         text: "Implementei o painel administrativo utilizando Angular para gerenciamento das transações via interface",
       },
       {
@@ -174,7 +170,7 @@ export const EXPERIENCE: TimelineEntry[] = [
       },
       {
         icon: PinIcon,
-        text: "Desenvolvi um canal de comunicação no painel para facilitar o contato com clientes via WhatsApp, considerando diferentes números utilizados",
+        text: "Desenvolvi um canal de comunicação no painel para facilitar o contato com clientes via WhatsApp com os diferentes números de suporte",
       },
       {
         icon: PinIcon,
@@ -307,6 +303,10 @@ export const EXPERIENCE: TimelineEntry[] = [
       {
         icon: PinIcon,
         text: "Refatorei os serviços para garantir finalização controlada dos processos, evitando transações travadas durante reinicializações e deploys",
+      },
+      {
+        icon: PinIcon,
+        text: "Implementei feature flags para o gerenciamento dinâmico de funcionalidades no sistema usando Unleash",
       },
       {
         icon: PinIcon,

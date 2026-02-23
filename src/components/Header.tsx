@@ -85,7 +85,7 @@ export default function Header({ currentPath }: Props): ReactElement {
                       Português
                     </a>
                   </DropdownMenuItem>
-                  <DropdownMenuItem asChild disabled>
+                  <DropdownMenuItem asChild>
                     <a
                       href="/gabriel-oliveira-english.pdf"
                       className="cursor-pointer flex items-center gap-2"
@@ -232,7 +232,7 @@ export default function Header({ currentPath }: Props): ReactElement {
                     <DialogClose asChild>
                       <a
                         href="/gabriel-oliveira-english.pdf"
-                        className="inline-flex items-center gap-2 rounded-md px-3 py-2 text-sm font-medium text-slate-400"
+                        className="inline-flex items-center gap-2 rounded-md px-3 py-2 text-sm font-medium text-slate-600 transition-colors hover:bg-slate-100 hover:text-slate-900"
                         download
                         aria-disabled="true"
                       >
@@ -241,7 +241,7 @@ export default function Header({ currentPath }: Props): ReactElement {
                           alt="United States"
                           className="size-4 rounded-full object-cover"
                         />
-                        English (WIP)
+                        English
                       </a>
                     </DialogClose>
                   </div>

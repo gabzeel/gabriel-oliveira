@@ -5,7 +5,7 @@ export const PROFILE: ProfileData = {
   name: "Gabriel Oliveira",
   title: "Senior Software Engineer",
   greeting: "Olá, eu sou o Gabriel",
-  description: "Sou um desenvolvedor que...",
+  description: "",
   avatarUrl: gabrielJpg,
   socials: [
     { label: "GitHub", href: "https://github.com/gabzeel", icon: "github" },
